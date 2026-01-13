@@ -3,7 +3,6 @@ import os
 import mysql.connector
 import pandas as pd
 import matplotlib.pyplot as plt
-import datetime
 
 load_dotenv()  # configuring the dotenv
 from contextlib import contextmanager

@@ -1,9 +1,9 @@
-from backend.src import app
+from backend.src import database
 
 
 #test case done for get_expense_date_data module
 def test_get_expense_date_data():
-    expenses = app.get_expense_date_data("2024-09-01")
+    expenses = database.get_expense_date_data("2024-09-01")
     assert len(expenses) == 5
     assert expenses[0]['id'] == 31
 
