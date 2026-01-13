@@ -8,14 +8,15 @@ def test_get_expense_date_data():
     assert expenses[0]['id'] == 31
 
 def test_get_all_datas():
-    expenses = app.get_all_datas()
+    expenses = database.get_all_datas()
     assert expenses[0]['id'] == 3
 
 def test_insert_into_database():
-    new_expense = app.insert_into_database('2026-02-11',75,'Clothes','Shopping')
+    new_expense = database.insert_into_database('2026-02-11',75,'Clothes','Shopping')
     assert new_expense['notes'] == 'Shopping'
 
 
 def test_get_datas():
-    expenses = app.get_datas('2026-01-13','2026-02-11')
+    expenses = database.get_datas('2026-01-13','2026-02-11')
     assert len(expenses) == 2
+

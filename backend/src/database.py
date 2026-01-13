@@ -6,6 +6,14 @@ import matplotlib.pyplot as plt
 
 load_dotenv()  # configuring the dotenv
 from contextlib import contextmanager
+import logging
+
+logger = logging.getLogger(__name__)  #here we are using the logging in the current file which is __name__
+logger.setLevel(logging.DEBUG)
+file_handler = logging.FileHandler('server_logs.log')  #this is the file where all the logs are shown
+formatter = logging.Formatter('%(asctime)s - %(name)s - %(levelname)s - %(message)s')
+file_handler.setFormatter(formatter)
+logger.addHandler(file_handler)
 
 
 @contextmanager
@@ -34,6 +42,7 @@ def get_connection(commit= False):
 
 
 def get_all_datas():
+    logger.info(f'Fetched all expenses data from database')
     with get_connection() as (cursor,db):
         cursor.execute("SELECT * FROM expenses;")  # this will gives us the current use and host
         datas = cursor.fetchall()  # fetching all the datas using sql query
@@ -41,6 +50,7 @@ def get_all_datas():
 
 
 def get_expense_date_data(expense_date):  # retrieving the expense data based on expense date
+    logger.info(f'Fetched all expenses data from database on date {expense_date}')
     with get_connection() as (cursor,db):
         cursor.execute("SELECT * FROM expenses WHERE expense_date = %s",
                        [expense_date])  # this will gives us the current use and host
@@ -50,6 +60,7 @@ def get_expense_date_data(expense_date):  # retrieving the expense data based on
 
 
 def insert_into_database(expense_date,amount,category,notes):
+    logger.info(f'Inserted new expense data on database with data {expense_date,amount,category,notes}')
     with get_connection(commit=True) as (cursor,db):
         cursor.execute("INSERT INTO expenses (expense_date,amount,category,notes) VALUES (%s, %s, %s, %s)",[expense_date,amount,category,notes])    #inserting the new data
         new_id = cursor.lastrowid  # as in our mysql the id is autoincremented , we can return the newly inserted data like this
@@ -57,6 +68,7 @@ def insert_into_database(expense_date,amount,category,notes):
         return cursor.fetchone()  #here we are returning the data with the help of id
 
 def delete_expense_date_data(expense_date):  # retrieving the expense data based on expense date
+    logger.info(f'Deleted all expenses data from database on date {expense_date}')
     with get_connection(commit=True) as (cursor,db):
         cursor.execute("DELETE FROM expenses WHERE expense_date = %s",
                        [expense_date])  # this will gives us the current use and host
@@ -64,6 +76,7 @@ def delete_expense_date_data(expense_date):  # retrieving the expense data based
 
 
 def get_datas(start_date, end_date):
+    logger.info(f'Fetched all expenses data from database between date: {start_date} and {end_date}')
     with get_connection() as (cursor, db):
         cursor.execute('''SELECT category,SUM(amount) AS total FROM expenses
                            WHERE expense_date BETWEEN %s AND %s
@@ -76,6 +89,7 @@ def get_datas(start_date, end_date):
         return datas
 
 def update_date_data(expense_date,amount,category,notes):
+    logger.info(f'Updated all expenses data from database on date {expense_date} with values {amount,category,notes}')
     with get_connection(commit=True) as (cursor, db):
         cursor.execute('''UPDATE expenses
         SET amount = %s, category = %s ,notes = %s WHERE expense_date = %s;''',[amount,category,notes,expense_date])

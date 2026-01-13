@@ -4,6 +4,11 @@ from datetime import date
 from pydantic import BaseModel
 from typing import List
 
+
+
+
+
+
 app = FastAPI()
 
 class Expense(BaseModel):
