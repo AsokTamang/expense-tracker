@@ -75,6 +75,13 @@ def get_datas(start_date, end_date):
         plt.show()
         return datas
 
+def update_date_data(expense_date,amount,category,notes):
+    with get_connection(commit=True) as (cursor, db):
+        cursor.execute('''UPDATE expenses
+        SET amount = %s, category = %s ,notes = %s WHERE expense_date = %s;''',[amount,category,notes,expense_date])
+        cursor.execute('SELECT * FROM expenses WHERE expense_date = %s',[expense_date])
+        data=cursor.fetchall()
+        return data
 
 
 
