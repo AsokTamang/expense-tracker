@@ -1,3 +1,4 @@
 2026-01-13 11:13:03,877 - __main__ - INFO - Fetched all expenses data from database between date: 2026-01-13 and 2026-02-11
 2026-01-13 11:14:15,172 - database - INFO - Fetched all expenses data from database
 2026-01-13 11:14:38,094 - database - INFO - Fetched all expenses data from database on date 2024-08-02
+2026-01-13 11:20:19,231 - database - INFO - Fetched all expenses data from database
