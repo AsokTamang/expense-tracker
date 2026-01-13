@@ -13,9 +13,15 @@ app = FastAPI()
 
 class Expense(BaseModel):
     expense_date:date
-    amount:int
+    amount:int|float
     category:str
     notes:str
+class Expense2(BaseModel):
+    amount:int|float
+    category:str
+    notes:str
+
+
 
 
 @app.get('/expenses')
@@ -31,18 +37,22 @@ async def get_date_expense(expense_date:date):
 
 
 #deleting the data based on specific date
-@app.post('/expenses/delete/{expense_date}')
+@app.delete('/expenses/delete/{expense_date}')
 async def delete_date_expense(expense_date:date):
     expense = database.delete_expense_date_data(expense_date)
     return expense
 
-@app.post('/expenses/insert',response_model=Expense)
-async def insert_date_expense(data:Expense):
-    expense = database.insert_into_database(expense_date=data.expense_date,amount=data.amount,category=data.category,notes=data.notes)
-    return expense
+@app.post('/expenses/insert/{expense_date}',response_model=List[Expense])
+async def insert_date_expense(data:List[Expense2],expense_date:date):
+     expenses=[]
+     for expense in data:
+          exp=database.insert_into_database(expense_date=expense_date,amount=expense.amount,category=expense.category,notes=expense.notes)
+          expenses.append(exp)
+     return expenses
+
 
 @app.put('/expenses/update/{expense_date}',response_model=List[Expense]|Expense)  #here for the updation we are using date in the param too
-async def update_date_data(data:Expense, expense_date:date):
+async def update_date_data(data:Expense2, expense_date:date):
     expense = database.update_date_data(expense_date=expense_date,amount=data.amount,category=data.category,notes=data.notes)
     return expense
 

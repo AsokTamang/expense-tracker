@@ -10,6 +10,7 @@ tab1,tab2=st.tabs(['Add/Update','Analytics'])
 
 categories = ['Rent','Food','Shopping','Entertainment','Other']
 with tab1:
+    expenses = []
     selected_date=st.date_input('Select Date',label_visibility='collapsed')
     response = rq.get(f'{api}/expenses/{selected_date.strftime("%Y-%m-%d")}')
     if response.status_code == 200:
@@ -40,13 +41,28 @@ with tab1:
                 st.session_state[f'notes_{i}'] = ""
 
             with column1:
-                st.number_input(label='Amount',min_value=0.0,step=1.0,key=f'amount_{i}',label_visibility='collapsed')
+                amount_input = st.number_input(label='Amount',min_value=0.0,step=1.0,key=f'amount_{i}',label_visibility='collapsed')
             with column2:
-                st.selectbox(label='Category',options =categories  ,key=f'category_{i}' ,label_visibility='collapsed')
+               category_input =  st.selectbox(label='Category',options =categories  ,key=f'category_{i}' ,label_visibility='collapsed')
             with column3:
-               st.text_input(label='Notes',key=f'notes_{i}',label_visibility='collapsed')
+               note_input =  st.text_input(label='Notes',key=f'notes_{i}',label_visibility='collapsed')
+
+            expenses.append(
+                {
+                    'amount':amount_input,
+                    'category':category_input,
+                    'notes':note_input
+                }
+            )
+
 
         submit_button=st.form_submit_button('Submit')
-
+        if submit_button:
+            filtered_data = [expense for expense in expenses if expense['amount']>0]  #only if there is a valid expense we will add that expense data into our database
+            response=rq.post(f'{api}/expenses/insert/{selected_date}',json=filtered_data)
+            if response.status_code==200:
+                st.write('Inserted successfully')
+            else:
+                st.write('Failed to insert data')
 
 
