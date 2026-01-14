@@ -146,3 +146,55 @@
 2026-01-13 21:51:10,803 - database - INFO - Fetched all expenses data from database between date: 2026-02-11 and 2026-02-14
 2026-01-13 21:58:29,671 - database - INFO - Fetched all expenses data from database on date 2026-01-14
 2026-01-13 21:59:09,984 - database - INFO - Fetched all expenses data from database on date 2026-01-14
+2026-01-13 22:02:17,551 - database - INFO - Fetched all expenses data from database on date 2026-01-14
+2026-01-13 22:04:45,944 - database - INFO - Fetched all expenses data from database on date 2026-01-14
+2026-01-13 22:04:48,207 - database - INFO - Fetched all expenses data from database between date: 2024-08-08 and 2026-01-13
+2026-01-13 22:05:04,193 - database - INFO - Fetched all expenses data from database on date 2026-01-14
+2026-01-13 22:05:06,279 - database - INFO - Fetched all expenses data from database between date: 2024-08-02 and 2026-01-13
+2026-01-13 22:05:07,211 - database - INFO - Fetched all expenses data from database on date 2026-01-14
+2026-01-13 22:05:09,392 - database - INFO - Fetched all expenses data from database between date: 2024-08-02 and 2026-01-08
+2026-01-13 22:07:58,661 - database - INFO - Fetched all expenses data from database between date: 2024-08-01 and 2026-02-14
+2026-01-13 22:13:34,199 - database - INFO - Fetched all expenses data from database on date 2026-01-14
+2026-01-13 22:13:36,616 - database - INFO - Fetched all expenses data from database between date: 2024-08-02 and 2026-01-08
+2026-01-13 22:17:44,922 - database - INFO - Fetched all expenses data from database on date 2026-01-14
+2026-01-13 22:17:50,092 - database - INFO - Fetched all expenses data from database between date: 2024-08-02 and 2026-01-08
+2026-01-13 22:18:33,203 - database - INFO - Fetched all expenses data from database on date 2026-01-14
+2026-01-13 22:18:35,386 - database - INFO - Fetched all expenses data from database between date: 2024-08-02 and 2026-01-08
+2026-01-13 22:20:40,959 - database - INFO - Fetched all expenses data from database on date 2026-01-14
+2026-01-13 22:20:43,116 - database - INFO - Fetched all expenses data from database between date: 2024-08-02 and 2026-01-08
+2026-01-13 22:21:47,727 - database - INFO - Fetched all expenses data from database on date 2026-01-14
+2026-01-13 22:21:49,948 - database - INFO - Fetched all expenses data from database between date: 2024-08-02 and 2026-01-08
+2026-01-13 22:23:40,204 - database - INFO - Fetched all expenses data from database on date 2026-01-14
+2026-01-13 22:23:42,598 - database - INFO - Fetched all expenses data from database between date: 2024-08-02 and 2026-01-08
+2026-01-13 22:25:39,846 - database - INFO - Fetched all expenses data from database on date 2026-01-14
+2026-01-13 22:25:44,031 - database - INFO - Fetched all expenses data from database between date: 2024-08-02 and 2026-01-08
+2026-01-13 22:26:18,939 - database - INFO - Fetched all expenses data from database on date 2026-01-14
+2026-01-13 22:26:21,035 - database - INFO - Fetched all expenses data from database between date: 2024-08-02 and 2026-01-08
+2026-01-13 22:26:55,052 - database - INFO - Fetched all expenses data from database on date 2026-01-14
+2026-01-13 22:26:57,223 - database - INFO - Fetched all expenses data from database between date: 2024-08-02 and 2026-01-08
+2026-01-13 22:27:18,388 - database - INFO - Fetched all expenses data from database on date 2026-01-14
+2026-01-13 22:27:20,564 - database - INFO - Fetched all expenses data from database between date: 2024-08-02 and 2026-01-08
+2026-01-13 22:27:46,678 - database - INFO - Fetched all expenses data from database on date 2026-01-14
+2026-01-13 22:27:48,810 - database - INFO - Fetched all expenses data from database between date: 2024-08-02 and 2026-01-08
+2026-01-13 22:32:35,631 - database - INFO - Fetched all expenses data from database on date 2026-01-14
+2026-01-13 22:33:45,685 - database - INFO - Fetched all expenses data from database on date 2026-01-14
+2026-01-13 22:34:59,157 - database - INFO - Fetched all expenses data from database on date 2026-01-14
+2026-01-13 22:35:04,905 - database - INFO - Fetched all expenses data from database on date 2026-01-14
+2026-01-13 22:35:08,446 - database - INFO - Fetched all expenses data from database on date 2026-01-14
+2026-01-13 22:35:11,551 - database - INFO - Fetched all expenses data from database on date 2026-01-14
+2026-01-13 22:35:13,685 - database - INFO - Fetched all expenses data from database between date: 2024-08-10 and 2026-01-21
+2026-01-13 22:38:04,262 - database - INFO - Fetched all expenses data from database on date 2026-01-14
+2026-01-13 22:38:07,991 - database - INFO - Fetched all expenses data from database on date 2026-01-14
+2026-01-13 22:38:10,115 - database - INFO - Fetched all expenses data from database between date: 2024-08-10 and 2026-01-21
+2026-01-13 22:40:01,434 - database - INFO - Fetched all expenses data from database on date 2026-01-14
+2026-01-13 22:40:05,433 - database - INFO - Fetched all expenses data from database on date 2026-01-14
+2026-01-13 22:40:07,517 - database - INFO - Fetched all expenses data from database between date: 2024-08-10 and 2026-01-21
+2026-01-13 22:40:39,088 - database - INFO - Fetched all expenses data from database on date 2026-01-14
+2026-01-13 22:40:42,748 - database - INFO - Fetched all expenses data from database on date 2026-01-14
+2026-01-13 22:40:44,855 - database - INFO - Fetched all expenses data from database between date: 2024-08-10 and 2026-01-21
+2026-01-13 22:43:05,783 - database - INFO - Fetched all expenses data from database on date 2026-01-14
+2026-01-13 22:43:09,994 - database - INFO - Fetched all expenses data from database on date 2026-01-14
+2026-01-13 22:43:12,084 - database - INFO - Fetched all expenses data from database between date: 2024-08-10 and 2026-01-21
+2026-01-13 22:43:44,593 - database - INFO - Fetched all expenses data from database on date 2026-01-14
+2026-01-13 22:43:48,435 - database - INFO - Fetched all expenses data from database on date 2026-01-14
+2026-01-13 22:43:50,568 - database - INFO - Fetched all expenses data from database between date: 2024-08-10 and 2026-01-21

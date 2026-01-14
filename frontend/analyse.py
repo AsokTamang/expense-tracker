@@ -18,7 +18,9 @@ def get_analyse(start_date,end_date):
 
     df=pd.DataFrame(datas,columns=['category','value','percentage'])   #setting the column
     st.bar_chart(df,x='category',y='value')
-    st.bar_chart(df,x='category',y='percentage')
+    df['value']=df['value'].astype(int)
+    df['percentage']=df['percentage'].astype(int)
+    st.table(df.set_index('category'))
 
 
 
