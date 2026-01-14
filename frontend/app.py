@@ -2,6 +2,7 @@ import streamlit as st
 import requests as rq
 from datetime import datetime
 import pandas as pd
+import random
 
 api = "http://localhost:8000"  # this is our backend api
 
@@ -13,7 +14,6 @@ with tab1:
     response = rq.get(f'{api}/expenses/{selected_date}')
     if response.status_code == 200:
         data = response.json()
-        st.write(data)
         expenses = []
         categories = ['Rent', 'Food', 'Shopping', 'Entertainment', 'Other']
         with st.form(key='expenses'):
@@ -33,14 +33,15 @@ with tab1:
                     notes = data[i]['notes']
 
                     with column1:
-                        amount_input = st.number_input(label='Amount', min_value=0.0, step=1.0, value=amount,
+                        amount_input = st.number_input(label='Amount', min_value=0.0, key=f'amount_{i}', step=1.0,
+                                                       value=amount,
                                                        label_visibility='collapsed')
                     with column2:
-                        category_input = st.selectbox(label='Category', options=categories,
+                        category_input = st.selectbox(label='Category', key=f'category_{i}', options=categories,
                                                       index=categories.index(category),
                                                       label_visibility='collapsed')
                     with column3:
-                        note_input = st.text_input(label='Notes', value=notes,
+                        note_input = st.text_input(label='Notes', key=f'note_{i}', value=notes,
                                                    label_visibility='collapsed')
 
                     expenses.append(
@@ -52,14 +53,16 @@ with tab1:
             else:
                 for i in range(5):
                     with column1:
-                        amount_input = st.number_input(label='Amount', min_value=0.0, step=1.0, value=0.0,
+                        amount_input = st.number_input(label='Amount', key=f'amount_{selected_date}_{i}', min_value=0.0,
+                                                       step=1.0, value=0.0,
                                                        label_visibility='collapsed')
                     with column2:
-                        category_input = st.selectbox(label='Category', options=categories,
+                        category_input = st.selectbox(label='Category', key=f'category_{selected_date}_{i}',
+                                                      options=categories,
                                                       index=categories.index('Rent'),
                                                       label_visibility='collapsed')
                     with column3:
-                        note_input = st.text_input(label='Notes', value='',
+                        note_input = st.text_input(label='Notes', key=f'notes_{selected_date}_{i}', value='',
                                                    label_visibility='collapsed')
 
                     expenses.append(
