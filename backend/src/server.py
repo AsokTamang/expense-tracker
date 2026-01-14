@@ -30,7 +30,7 @@ async def get_expenses():
     return expenses
 
 #getting data from specific date
-@app.get('/expenses/{expense_date}')
+@app.get('/expenses/{expense_date}',response_model=List[Expense])
 async def get_date_expense(expense_date:date):
     expense = database.get_expense_date_data(expense_date)
     return expense

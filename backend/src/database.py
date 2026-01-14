@@ -60,9 +60,11 @@ def insert_into_database(expense_date,amount,category,notes):
     logger.info(f'Inserted new expense data on database with data {expense_date,amount,category,notes}')
     with get_connection(commit=True) as (cursor,db):
         cursor.execute("INSERT INTO expenses (expense_date,amount,category,notes) VALUES (%s, %s, %s, %s)",[expense_date,amount,category,notes])    #inserting the new data
-        new_id = cursor.lastrowid  # as in our mysql the id is autoincremented , we can return the newly inserted data like this
-        cursor.execute("SELECT * FROM expenses WHERE rowid = %s",[new_id])
-        return cursor.fetchone()  #here we are returning the data with the help of id
+        rowid = cursor.lastrowid
+        cursor.execute("SELECT * FROM expenses WHERE id = %s",[rowid])
+        data=cursor.fetchone()
+        return data
+
 
 def delete_expense_date_data(expense_date):  # retrieving the expense data based on expense date
     logger.info(f'Deleted all expenses data from database on date {expense_date}')
