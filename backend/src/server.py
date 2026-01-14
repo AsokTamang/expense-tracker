@@ -20,6 +20,9 @@ class Expense2(BaseModel):
     amount:int|float
     category:str
     notes:str
+class Analytics(BaseModel):
+    start_date:date
+    end_date:date
 
 
 
@@ -64,4 +67,19 @@ async def delete_date_data(expense_date:date):
         return 'Successful deletion'
     except Exception as e:
         return 'Error occured',e
+
+
+@app.post('/expenses/analytics')
+async def analytics_data(payload:Analytics):
+    try:
+        datas=[]
+        expense = database.get_datas_between_date(payload.start_date,payload.end_date)
+        for data in expense:
+            datas.append(data)
+        return datas
+    except Exception as e:
+        return 'Error occured',e
+
+
+
 

@@ -3,6 +3,8 @@ import requests as rq
 from datetime import datetime
 import pandas as pd
 import random
+from analyse import get_analyse
+
 
 api = "http://localhost:8000"  # this is our backend api
 
@@ -86,3 +88,15 @@ with tab1:
                         st.error('Failed to insert data')
                 else:
                     st.error('Please insert valid data')
+
+
+with tab2:
+    col1, col2 = st.columns(2)
+    with col1:
+     start_date = st.date_input('Select Start Date')
+    with col2:
+        end_date = st.date_input('Select End Date')
+    if st.button('Analayse'):
+       get_analyse(start_date, end_date)
+
+

@@ -74,17 +74,13 @@ def delete_expense_date_data(expense_date):  # retrieving the expense data based
 
 
 
-def get_datas(start_date, end_date):
+def get_datas_between_date(start_date, end_date):
     logger.info(f'Fetched all expenses data from database between date: {start_date} and {end_date}')
     with get_connection() as (cursor, db):
         cursor.execute('''SELECT category,SUM(amount) AS total FROM expenses
                            WHERE expense_date BETWEEN %s AND %s
                            GROUP BY category;''',[start_date,end_date])  # here db is our sql connecting instance\
         datas = cursor.fetchall()
-        df = pd.DataFrame(datas,columns=['category','total'])  #first of all we are creating a dataframe with the help of datas using column category and total
-        df['total']=pd.to_numeric(df['total'])  #here we are converting the column called total to numeric
-        df.plot(kind='bar',x='category',y='total')
-        plt.show()
         return datas
 
 def update_date_data(expense_date,amount,category,notes):

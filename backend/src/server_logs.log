@@ -124,3 +124,25 @@
 2026-01-13 21:14:51,767 - database - INFO - Fetched all expenses data from database on date 2026-01-22
 2026-01-13 21:17:17,443 - database - INFO - Fetched all expenses data from database on date 2024-09-02
 2026-01-13 21:17:45,878 - database - INFO - Fetched all expenses data from database on date 2026-01-22
+2026-01-13 21:18:36,618 - database - INFO - Fetched all expenses data from database on date 2026-01-09
+2026-01-13 21:20:55,143 - database - INFO - Fetched all expenses data from database on date 2026-01-09
+2026-01-13 21:21:01,079 - database - INFO - Fetched all expenses data from database on date 2026-01-15
+2026-01-13 21:21:05,462 - database - INFO - Fetched all expenses data from database on date 2026-01-22
+2026-01-13 21:21:15,739 - database - INFO - Fetched all expenses data from database on date 2026-01-24
+2026-01-13 21:21:36,364 - database - INFO - Fetched all expenses data from database on date 2026-01-24
+2026-01-13 21:21:38,435 - database - INFO - Inserted new expense data on database with data (datetime.date(2026, 1, 24), 60.0, 'Entertainment', 'swimming')
+2026-01-13 21:21:38,471 - database - INFO - Inserted new expense data on database with data (datetime.date(2026, 1, 24), 3000.0, 'Other', 'laptop')
+2026-01-13 21:21:54,188 - database - INFO - Fetched all expenses data from database on date 2026-01-08
+2026-01-13 21:22:12,370 - database - INFO - Fetched all expenses data from database on date 2026-01-06
+2026-01-13 21:23:01,971 - database - INFO - Fetched all expenses data from database on date 2026-01-31
+2026-01-13 21:27:00,086 - database - INFO - Fetched all expenses data from database on date 2026-01-31
+2026-01-13 21:29:32,683 - database - INFO - Fetched all expenses data from database on date 2026-01-31
+2026-01-13 21:29:40,038 - database - INFO - Fetched all expenses data from database on date 2026-01-22
+2026-01-13 21:30:04,051 - database - INFO - Fetched all expenses data from database on date 2026-01-22
+2026-01-13 21:30:47,700 - database - INFO - Fetched all expenses data from database on date 2026-01-22
+2026-01-13 21:30:53,984 - database - INFO - Fetched all expenses data from database on date 2026-01-22
+2026-01-13 21:31:30,160 - database - INFO - Fetched all expenses data from database on date 2026-01-22
+2026-01-13 21:31:45,754 - database - INFO - Fetched all expenses data from database on date 2026-01-14
+2026-01-13 21:51:10,803 - database - INFO - Fetched all expenses data from database between date: 2026-02-11 and 2026-02-14
+2026-01-13 21:58:29,671 - database - INFO - Fetched all expenses data from database on date 2026-01-14
+2026-01-13 21:59:09,984 - database - INFO - Fetched all expenses data from database on date 2026-01-14
