@@ -92,9 +92,19 @@ def update_date_data(expense_date,amount,category,notes):
         data=cursor.fetchall()
         return data
 
+def get_month_data(month):
+    logger.info(f'fetched all expenses data from database on month {month}')
+    with get_connection(commit=True) as (cursor, db):
+        cursor.execute('''SELECT category,SUM(amount) AS total FROM expenses
+                           WHERE MONTH(expense_date) = %s 
+                           GROUP BY category;''',[month])
+        data=cursor.fetchall()
+        return data
+
 
 
 if __name__ == '__main__':
    #delete_expense_date_data('2026-05-01')
-   print(get_datas('2026-01-13','2026-02-11'))
+   pass
+
 

@@ -198,3 +198,9 @@
 2026-01-13 22:43:44,593 - database - INFO - Fetched all expenses data from database on date 2026-01-14
 2026-01-13 22:43:48,435 - database - INFO - Fetched all expenses data from database on date 2026-01-14
 2026-01-13 22:43:50,568 - database - INFO - Fetched all expenses data from database between date: 2024-08-10 and 2026-01-21
+2026-01-13 23:54:12,940 - database - INFO - Fetched all expenses data from database on date 2026-01-14
+2026-01-13 23:55:46,064 - database - INFO - Fetched all expenses data from database on date 2026-01-14
+2026-01-13 23:57:03,429 - database - INFO - fetched all expenses data from database on month 08
+2026-01-13 23:58:02,697 - database - INFO - fetched all expenses data from database on month 08
+2026-01-13 23:59:03,045 - database - INFO - fetched all expenses data from database on month 08
+2026-01-14 00:00:04,609 - database - INFO - Fetched all expenses data from database on date 2026-01-14

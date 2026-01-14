@@ -27,6 +27,9 @@ class Analytics(BaseModel):
 
 
 
+
+
+
 @app.get('/expenses')
 async def get_expenses():
     expenses =  database.get_all_datas()
@@ -79,6 +82,21 @@ async def analytics_data(payload:Analytics):
         return datas
     except Exception as e:
         return 'Error occured',e
+
+
+@app.post('/expenses/month_analytics/{month}')
+async def analytics_data(month):
+    try:
+        datas=[]
+        expense = database.get_month_data(month)
+        for data in expense:
+            datas.append(data)
+        return datas
+    except Exception as e:
+        return 'Error occured',e
+
+
+
 
 
 

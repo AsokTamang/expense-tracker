@@ -4,15 +4,16 @@ from datetime import datetime
 import pandas as pd
 import random
 from analyse import get_analyse
+from analyse_month import get_monthly_analyse
 
 
 api = "http://localhost:8000"  # this is our backend api
 
 st.title('Expense Tracking System')
-tab1, tab2 = st.tabs(['Add/Update', 'Analytics'])
+tab1, tab2 , tab3 = st.tabs(['Add/Update', 'Analytics' , 'Month Based Analytics'])
 
 with tab1:
-    selected_date = st.date_input('Select Date', label_visibility='collapsed')
+    selected_date = st.date_input('Select Date',key='selected_date',label_visibility='collapsed')
     response = rq.get(f'{api}/expenses/{selected_date}')
     if response.status_code == 200:
         data = response.json()
@@ -98,5 +99,16 @@ with tab2:
         end_date = st.date_input('Select End Date')
     if st.button('Analayse'):
        get_analyse(start_date, end_date)
+
+
+with tab3:
+    selected_v = st.date_input('Select Date',key='selected_v')
+    if st.button('Analyse Monthly'):
+     month = selected_v.month  #extracting only the month from the selected date
+     get_monthly_analyse(month)
+
+
+
+
 
 
